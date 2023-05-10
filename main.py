@@ -1,20 +1,20 @@
 import struct
 
 def compressor_lzw(data, max_dict_size):
-    dicionario = {bytes([i]): i for i in range(256)} #Cria um dicionário representado por bytes
+    dicionario = {bytes([i]): i for i in range(256)} #Cria um dicionário com chave inteira e valores em bytes (dicionario ascii)
     dict_size = 256 #Define o tamanho base do dicionário
     resultado = bytearray() #Cria um array de bytes para armazenar o resultado
     buffer = b'' #indica que o buffer armazenará bytes
     i = 0
     while i < len(data):
-        symbol = bytes([data[i]])
-        if buffer + symbol in dicionario:
-            buffer += symbol
+        symbol = bytes([data[i]]) #pega o próximo simbolo
+        if buffer + symbol in dicionario:   #verifica se a nova sequencia esta no dicionario
+            buffer += symbol    #Se estiver, coloca no buffer
         else:
-            code = dicionario[buffer]
-            resultado += struct.pack('<H', code)
-            if dict_size < max_dict_size:
-                dicionario[buffer + symbol] = dict_size
+            code = dicionario[buffer]   #Caso não esteja, pega o codigo do buffer
+            resultado += struct.pack('<H', code)    #coloca o buffer no array que fica a descompressão
+            if dict_size < max_dict_size:   # coloca a nova sequencia que nao estava no dicionario
+                dicionario[buffer + symbol] = dict_size 
                 dict_size += 1
                 
             buffer = symbol
@@ -24,29 +24,28 @@ def compressor_lzw(data, max_dict_size):
     return resultado, dict_size
 
 def descompressor_lzw(data, max_dict_size):
-    dicionario = {i: bytes([i]) for i in range(256)}
+    dicionario = {i: bytes([i]) for i in range(256)}    #Cria um dicionário com chaves em bytes e os valores inteiros
     dict_size = 256
     resultado = bytearray()
     buffer = b'' #buffer em binario
     i = 0
     while i < len(data):
-        code = struct.unpack('<H', data[i:i+2])[0]
+        code = struct.unpack('<H', data[i:i+2])[0]  #desempacota de 2 em 2 bytes
         i += 2
-        if code in dicionario:
-            entry = dicionario[code]
-        elif code == dict_size:
-            entry = buffer + buffer[0:1]
-        else:
-            raise ValueError('Invalid code')
-        resultado += entry
-        if buffer:
-            if dict_size < max_dict_size:
-                dicionario[dict_size] = buffer + entry[0:1]
+        if code in dicionario:  #verifica se o codigo esta no dicionario
+            value = dicionario[code]
+        elif code == dict_size: #caso nao esteja, cria uma nova sequencia acrescentando o primeiro caractere do buffer no final
+            value = buffer + buffer[0:1]
+        
+        resultado += value  #coloca o valor na variável que guarda o resultado da descompressão
+        if buffer:  # coloca novas sequencias no dicionário
+            if dict_size < max_dict_size:   
+                dicionario[dict_size] = buffer + value[0:1]
                 dict_size += 1
                 
-            buffer = entry
+            buffer = value
         else:
-            buffer = entry
+            buffer = value
     return resultado, dict_size
 
 filename = 'corpus16MB.txt'
