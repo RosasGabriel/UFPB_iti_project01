@@ -50,11 +50,11 @@ def descompressor_lzw(data, max_dict_size):
 
 filename = 'corpus16MB.txt'
 
-k=16 
+k=12 
 max_dict_size = 2**k  # Tamanho máximo do dicionário
 data = open(filename, 'rb').read()
 
-compressed_data, dict_sizeC = compressor_lzw(data, max_dict_size)
+compressed_data, dictSizeCompressao = compressor_lzw(data, max_dict_size)
 
 
 compressed_filename = 'exemplo_comprimido_' + filename
@@ -68,4 +68,4 @@ with open(decompressed_filename, 'wb') as f:
     f.write(decompressed_data)
 
 
-print(f'Tamanho máximo do dicionário: {max_dict_size}, dicionário compressão:{dict_sizeC}, dicionário descompressão:{dict_sizeD} taxa de compressão: {len(compressed_data)/len(data):.2f}')
+print(f'Tamanho máximo do dicionário: {max_dict_size}, tamanho dicionário compressão:{dictSizeCompressao}, taxa de compressão: {len(data)/len(compressed_data):.2f}')
