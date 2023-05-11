@@ -68,4 +68,4 @@ with open(decompressed_filename, 'wb') as f:
     f.write(decompressed_data)
 
 
-print(f'Tamanho máximo do dicionário: {max_dict_size}, tamanho dicionário compressão:{dictSizeCompressao}, taxa de compressão: {len(data)/len(compressed_data):.2f}')
+print(f'Tamanho máximo do dicionário: {max_dict_size}, tamanho dicionário compressão:{dictSizeCompressao}, taxa de compressão: {len(data)/len(compressed_data):.2f}, taxa de compressão 2: {len(data)/((len(compressed_data)*k)/8):.2f}')
