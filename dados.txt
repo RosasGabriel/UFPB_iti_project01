@@ -1,0 +1,55 @@
+Arquivo: disco.mp4
+
+Para K = 9 Tempo: 5.59878396987915 segundos
+Tamanho máximo do dicionário: 512, tamanho dicionário compressão:512, taxa de compressão: 0.50, 
+
+Para K = 10 Tempo: 4.286460638046265 segundos
+Tamanho máximo do dicionário: 1024, tamanho dicionário compressão:1024, taxa de compressão: 0.50, 
+
+Para K = 11 Tempo: 4.347022533416748 segundos
+Tamanho máximo do dicionário: 2048, tamanho dicionário compressão:2048, taxa de compressão: 0.51, 
+
+Para K = 12 Tempo: 4.441088914871216 segundos
+Tamanho máximo do dicionário: 4096, tamanho dicionário compressão:4096, taxa de compressão: 0.51, 
+
+Para K = 13 Tempo: 4.2499120235443115 segundos
+Tamanho máximo do dicionário: 8192, tamanho dicionário compressão:8192, taxa de compressão: 0.54, 
+
+Para K = 14 Tempo: 4.16306209564209 segundos
+Tamanho máximo do dicionário: 16384, tamanho dicionário compressão:16384, taxa de compressão: 0.60, 
+
+Para K = 15 Tempo: 4.285064935684204 segundos
+Tamanho máximo do dicionário: 32768, tamanho dicionário compressão:32768, taxa de compressão: 0.69, 
+
+Para K = 16 Tempo: 4.191860914230347 segundos
+Tamanho máximo do dicionário: 65536, tamanho dicionário compressão:65536, taxa de compressão: 0.82, 
+
+
+
+
+Arquivo: corpus16MB.txt
+
+Para K = 9 Tempo: 22.99273443222046 segundos
+Tamanho máximo do dicionário: 512, tamanho dicionário compressão:512, taxa de compressão: 0.86, 
+
+Para K = 10 Tempo: 21.797993183135986 segundos
+Tamanho máximo do dicionário: 1024, tamanho dicionário compressão:1024, taxa de compressão: 1.06, 
+
+Para K = 11 Tempo: 20.864508390426636 segundos
+Tamanho máximo do dicionário: 2048, tamanho dicionário compressão:2048, taxa de compressão: 1.27, 
+
+Para K = 12 Tempo: 19.71136474609375 segundos
+Tamanho máximo do dicionário: 4096, tamanho dicionário compressão:4096, taxa de compressão: 1.47, 
+
+Para K = 13 Tempo: 19.53050136566162 segundos
+Tamanho máximo do dicionário: 8192, tamanho dicionário compressão:8192, taxa de compressão: 1.66, 
+
+Para K = 14 Tempo: 19.38510537147522 segundos
+Tamanho máximo do dicionário: 16384, tamanho dicionário compressão:16384, taxa de compressão: 1.86, 
+
+Para K = 15 Tempo: 21.78115439414978 segundos
+Tamanho máximo do dicionário: 32768, tamanho dicionário compressão:32768, taxa de compressão: 2.07, 
+
+Para K = 16 Tempo: 19.947871923446655 segundos
+Tamanho máximo do dicionário: 65536, tamanho dicionário compressão:65536, taxa de compressão: 2.30, 
+
