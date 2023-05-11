@@ -67,7 +67,7 @@ def Teste(k, filename):
         f.write(decompressed_data)
 
 
-    return f'Tamanho máximo do dicionário: {max_dict_size}, tamanho dicionário compressão:{dictSizeCompressao}, taxa de compressão: {len(data)/len(compressed_data):.2f}, \n'
+    return f'Tamanho máximo do dicionário: {max_dict_size}, tamanho dicionário compressão:{dictSizeCompressao}, razão de compressão: {len(data)/len(compressed_data):.2f}, razão de compressão 2° fórmula: {len(data)/(((dictSizeCompressao)*k)/8):.2f} \n'
 
 filename = 'disco.mp4'
 filename2 = 'corpus16MB.txt'
