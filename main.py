@@ -48,9 +48,9 @@ def descompressor_lzw(data, max_dict_size):
             buffer = value
     return resultado, dict_size
 
-filename = 'corpus16MB.txt'
+filename = 'disco.mp4'
 
-k=12 
+k=14 
 max_dict_size = 2**k  # Tamanho máximo do dicionário
 data = open(filename, 'rb').read()
 
