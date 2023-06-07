@@ -2,7 +2,7 @@ import cv2
 import os
 
 # Caminho para o diretório do banco de dados de faces
-database_path = "\orl_faces"
+database_path = "PARTE2\orl_faces"
 
 # Função para carregar imagens do banco de dados
 def carregar_imagens(caminho):
