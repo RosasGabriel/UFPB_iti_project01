@@ -99,7 +99,6 @@ for i, dir in enumerate(diretorio):
     teste_imagem.append(images[5])
     teste_categoria.append(categoria)
     images.pop(5)
-    print(len(images))
     for img in images[:9]:
         pastas[i].append(img)
 
